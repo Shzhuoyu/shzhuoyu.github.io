@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>MutiOcc-NeRF</title>
+		<!-- Bootstrap core CSS -->
+		
+		<!-- Custom styles for this template -->
+		<link href="css/academicons.css" rel="stylesheet">
+		<link rel="stylesheet" href="/dics.original.css">
+		<script src="/dics.original.js"></script>
+		<link href="css/footer.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="src/original/dics.original.css">
+		<link rel='stylesheet'
+         href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    	<script src="src/original/dics.original.js"></script>
+		<link
+		  rel="stylesheet" 
+		  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+		  integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+		  crossorigin="anonymous">
+		<!-- Custom fonts for this template -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<script>
+			document.addEventListener('DOMContentLoaded', domReady);
+	
+			function domReady() {
+				new Dics({
+					container: document.querySelectorAll('.b-dics')[0],
+					textPosition: 'top'
+				});
+	
+				new Dics({
+					container: document.querySelectorAll('.b-dics')[1],
+					hideTexts: true,
+					textPosition: 'center'
+				});
+	
+				new Dics({
+					container: document.querySelectorAll('.b-dics')[2]
+				});
+	
+				new Dics({
+					container: document.querySelectorAll('.b-dics')[3],
+					linesOrientation: 'vertical',
+					textPosition: 'left',
+					arrayBackgroundColorText: ['#000000', '#FFFFFF'],
+					arrayColorText: ['#FFFFFF', '#000000'],
+					linesColor: 'rgb(0,0,0)'
+				});
+	
+				new Dics({
+					container: document.querySelectorAll('.b-dics')[4],
+					linesOrientation: 'vertical',
+					textPosition: 'right'
+				});
+	
+				new Dics({
+					container: document.querySelectorAll('.b-dics')[5],
+					textPosition: 'bottom'
+				});
+	
+				new Dics({
+					container: document.querySelectorAll('.b-dics')[6],
+					filters: ['blur(3px)', 'grayscale(1)', 'sepia(1)', 'saturate(3)']
+				});
+				new Dics({
+					container: document.querySelectorAll('.b-dics')[7],
+					rotate: '45deg'
+				});
+	
+			}
+		</script>
+		<script type="text/javascript">
+			var x = 0;
+			var images = [
+				["figures/fence1_ours.png",
+				"figures/fence1_his.png",
+				"figures/fence1_gt.png"],
+				["figures/fence3_ous.png",
+				"figures/fence3_his.png",
+				"figures/fence3_gt.png"],
+				["figures/scribble1_ours.png",
+				"figures/scribble1_his.png",
+				"figures/scrible1_gt.png"],
+			];
+			function ChangeImage() {
+				x = Math.floor(Math.random() * images.length);
+              	document.getElementById("img1").src = images[x];
+			}
+			function displayNextImages() {
+              	x = (x === images.length - 1) ? 0 : x + 1;
+              	document.getElementById("img1").src = images[x][0];
+				document.getElementById("img2").src = images[x][1];
+				document.getElementById("img3").src = images[x][2];
+				document.getElementById("img4").src = images[x][3];
+          }
+
+			function displayPreviousImages() {
+				x = (x <= 0) ? images.length - 1 : x - 1;
+				document.getElementById("img1").src = images[x][0];
+				document.getElementById("img2").src = images[x][1];
+				document.getElementById("img3").src = images[x][2];
+				document.getElementById("img4").src = images[x][3];
+			}
+			function ChangeImages() {
+				x = Math.floor(Math.random() * images.length);
+              	document.getElementById("img1").src = images[x][0];
+				document.getElementById("img2").src = images[x][1];
+				document.getElementById("img3").src = images[x][2];
+				document.getElementById("img4").src = images[x][3];
+			}
+		</script>
+		
+	</head>
+<body>
+
+<main role="main" class="container", style="max-width: 900px;">
+	    <h1 class="title is-3 publication-title">Multi-3D Occlusion Mask Learning for Flexible Occlusion Removal in Neural Radiance Fields</h1>
+	<!-- &#x1F6AB &#129306 &#128581 &#128581;&#8205;&#9792;&#65039 &#x1F6AB-->
+	<div class="col text-center">
+	    <p class="authors">
+		  Zhuoyu Shi,
+	      Shuo Zhang, 
+		  Song Chang,
+		  Youfang Lin
+	    </p>
+	</div>
+	<div class="col text-center", style="padding: 20px 0px;">
+	    <a class="btn btn-dark", href="https://link.springer.com/chapter/10.1007/978-981-97-8508-7_35" role="button">Paper</a>
+		<a class="btn btn-dark" href="#bibtex" role="button">Bibtex</a>
+		<a class="btn btn-dark", href="https://github.com/shzhuoyu/mutiOcc-NeRF" role="button">Code</a>
+		<a class="btn btn-dark", href="https://drive.google.com/drive/folders/11JuIU2H5ATJ2sbh5CVkEpJ_3P0VEl-RT?usp=drive_link" role="button">Dataset</a>
+	</div>
+	<div class="polaroid" style="padding-bottom: 40px">
+		<div style="padding: 0px 0px;", class="center">
+			<div class="b-dics" >
+				<img id="img3" src="figures/fence1_gt.png" alt="Ground Truth">
+				<img id="img2" src="figures/fence1_his.png" alt="OCC-NeRF">
+				<img id="img1" src="figures/fence1_ours.png" alt="MutiOcc-NeRF">
+				<!-- <img id="img4" src="my_imgs/3m_m360.png" alt="REF^2-NeRF"> -->
+			</div>		
+		</div>
+
+		<div style="padding: 0px 0px;">
+		<!-- <button type="button" class="btn btn-outline-dark" onclick="ChangeImages()">Change</button> -->
+		<div class="pos_left" >
+		<button type="button" class="btn btn-outline-dark" onclick="displayPreviousImages()">&#10094 Previous</button>
+		</div>
+		<div class="pos_right">
+		<button type="button" class="btn btn-outline-dark" onclick="displayNextImages()">Next &#10095</button>
+		</div>
+	</div>
+	</div>
+	<h2 class="title is-4">Abstract</h2>
+	  <p>
+		As NeRFs modeling becomes more widely available,  there is an increasing demand for the ability to flexibly and conveniently exclude unnecessary obstructions during the modeling process. 
+Existing methods generally adopt a “ignore” strategy for occlusions, which cannot conveniently and flexibly remove any occlusions in complex scenes. 
+We propose a new method that only requires the introduction of a small number of different external occlusion annotation to model independent 3D masks for different occlusions in space. This “model first, remove later” occlusion removal strategy allows us to model the scene only one process and obtain unobstructed images from desired viewpoint, with any specific or multiple obstruction removed. Experimental results on existing and our synthesized datasets validate the effectiveness of our method and strategy.
+	  </p>
+	<h2 class="title is-4">Method Pipeline</h2>
+	<div style="padding: 20px 0px;", class="center">
+	<img src="figures/overview.pdf" alt="Model Pipeline", class="center">
+	</div>
+	<p>
+		By taking the encoding of position and viewing direction, MLP models the scene and occlusion. In training stage, we use NeRF to fit a small amount of occlusion annotations, aim to project of 2D occlusion masks to 3D space. During the testing phase, we exclude sampling points with high occlusion confidence (as shown in the purple module
+	</p>
+	<h2 class="title is-4">Novel View Rendering (Input & MutiOcc-NeRF)</h2>
+	<div class="row">
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/scribble3_input.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+			</video>
+		</div>
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/scribble3_output.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</div>
+	</div>
+	<div class="row">
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/fence1_input.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+			</video>
+		</div>
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/fence1_output.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</div>
+	</div>
+	<div class="row">
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/model1_input.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+			</video>
+		</div>
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/model1_output.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</div>
+	</div>
+	<!-- <h2 class="title is-4">Scene decomposition</h2>
+	<div class="row">
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/house_vi.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+			</video>
+		</div>
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/house_vd.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</div>
+	</div>
+	<div class="row">
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/ball_vi.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+			</video>
+		</div>
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/ball_vd.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</div>
+	</div>
+	<h2 class="title is-4">Depth(View-independent)</h2>
+	<div class="row">
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/house_vi_depth.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+			</video>
+		</div>
+		<div class="column">
+			<video class='center_video' controls autoplay muted loop>
+			<source src="videos/ball_vi_depth.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+		</div>
+	</div> -->
+	
+	
+<h2 class="title is-4">BibTeX</h2>
+<code class="codebox" id="bibtex"><pre>
+	<!-- @misc{kim2023ref2nerf,
+		title={REF$^2$-NeRF: Reflection and Refraction aware Neural Radiance Field}, 
+		author={Wooseok Kim and Taiki Fukiage and Takeshi Oishi},
+		year={2023},
+		eprint={2311.17116},
+		archivePrefix={arXiv},
+		primaryClass={cs.CV}
+	} -->
+	@InProceedings{10.1007/978-981-97-8508-7_35,
+		author="Shi, Zhuoyu
+		and Zhang, Shuo
+		and Chang, Song
+		and Lin, Youfang",
+		title="Multi-3D Occlusion Mask Learning for Flexible Occlusion Removal in Neural Radiance Fields",
+		booktitle="Pattern Recognition and Computer Vision",
+		year="2025",
+		publisher="Springer Nature Singapore",
+		address="Singapore",
+		pages="506--520",
+		isbn="978-981-97-8508-7"
+	}
+   
+</pre></code>
+	<h2 class="title is-4">Acknowledgement</h2>
+	  <p, style="padding: 50px 0px;">
+		We borrow this website's template from <a href="https://woo-seok-kim.github.io/ref_square_nerf/">REF^2-NeRF</a>.
+	  </p>
+
+</main>
+</body>
+	
+</html>
